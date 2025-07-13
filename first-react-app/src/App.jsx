@@ -15,7 +15,12 @@ const App = () => {
   return (
     <div>
       <h2>Functional Component</h2>
-      <Card title="Star Wars" />
+      <Card
+        title="Star Wars"
+        rating={5}
+        isCool={true}
+        names={[{ name: "Actors" }]}
+      />
       <Card title="Avatar" />
       <Card title="Heretic" />
       <Card />
