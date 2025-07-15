@@ -42,6 +42,7 @@ button {
   background-color: transparent;
   width: 100%;
   text-align: right;
+  color: hsl(0, 0%, 90%);
 }
 
 button:hover {

@@ -1,17 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-const Card = ({ title, setHasLiked }) => {
+const Card = ({ title }) => {
+  const [hasLiked, setHasLiked] = useState(false);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log(`Card with title "${title}" has been liked.`);
+  });
+
   return (
-    <div className="card">
+    <div
+      className="card"
+      onClick={() => setCount((prevState) => prevState + 1)}
+    >
       <h2>{title}</h2>
+
       <button
         onClick={() => {
-          setHasLiked((prev) => !prev);
+          setHasLiked(!hasLiked);
         }}
       >
+        {count}
         {hasLiked ? "👍" : "👎"}
       </button>
     </div>
@@ -22,8 +34,10 @@ const App = () => {
   const [hasLiked, setHasLiked] = useState(false);
   return (
     <div className="card-container">
-      <Card title="Tarzan " hasLiked={hasLiked} setHasLiked={setHasLiked} />
+      <Card title="Tarzan " />
       <Card title="Superman " />
+      <Card title="Legend Of Zelda " />
+      <Card title="Fantastic 4: First Steps" />
     </div>
   );
 };
