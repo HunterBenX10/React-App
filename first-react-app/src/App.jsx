@@ -12,7 +12,7 @@ const Card = ({ title, setHasLiked }) => {
           setHasLiked((prev) => !prev);
         }}
       >
-        Like
+        {hasLiked ? "👍" : "👎"}
       </button>
     </div>
   );
