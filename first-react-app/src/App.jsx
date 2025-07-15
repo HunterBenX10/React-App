@@ -9,7 +9,7 @@ const Card = ({ title }) => {
 
   useEffect(() => {
     console.log(`Card with title "${title}" has been liked.`);
-  });
+  }, [hasLiked]);
 
   return (
     <div
@@ -23,7 +23,7 @@ const Card = ({ title }) => {
           setHasLiked(!hasLiked);
         }}
       >
-        {count}
+        {count || null}
         {hasLiked ? "👍" : "👎"}
       </button>
     </div>
