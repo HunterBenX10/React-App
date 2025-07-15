@@ -12,19 +12,12 @@ const Card = ({ title }) => {
 };
 
 const App = () => {
+  const [hasLiked, setHasLiked] = useState(false);
   return (
     <div className="card-container">
-      <Card
-        title="Star Wars"
-        rating={5}
-        isCool={true}
-        names={[{ name: "Actors" }]}
-      />
-      <Card title="Avatar" />
-      <Card title="Heretic" />
-      <Card title="Superman" />
+      <Card title="Tarzan " hasLiked={hasLiked} />
+      <Card title="Superman " />
     </div>
   );
 };
-
 export default App;
