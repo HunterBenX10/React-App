@@ -3,10 +3,17 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-const Card = ({ title }) => {
+const Card = ({ title, setHasLiked }) => {
   return (
     <div className="card">
       <h2>{title}</h2>
+      <button
+        onClick={() => {
+          setHasLiked((prev) => !prev);
+        }}
+      >
+        Like
+      </button>
     </div>
   );
 };
@@ -15,9 +22,10 @@ const App = () => {
   const [hasLiked, setHasLiked] = useState(false);
   return (
     <div className="card-container">
-      <Card title="Tarzan " hasLiked={hasLiked} />
+      <Card title="Tarzan " hasLiked={hasLiked} setHasLiked={setHasLiked} />
       <Card title="Superman " />
     </div>
   );
 };
+
 export default App;
